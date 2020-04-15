@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EAD_CA2</string>
+    <string name="search_hint">Suche</string>
+    <string name="Title">Titel</string>
+    <string name="loading">Wird geladen
+</string>
+    <string name="title">Titel</string>
+    <string name="imdb_rating">IMDB Bewertung</string>
+    <string name="imdb_rating_title">IMDB Bewertung Titel</string>
+    <string name="description_title">Beschreibung Titel</string>
+    <string name="description">Beschreibung</string>
+    <string name="director_title">Direktor Titel</string>
+    <string name="director">Direktor</string>
+    <string name="movie_length_title">Film Länge Titel</string>
+    <string name="movie_length">Film Länge</string>
+    <string name="release_date_title">Veröffentlichung Datum Titel</string>
+    <string name="release_date">Veröffentlichung Datum</string>
+    <string name="search">Suche</string>
+</resources>

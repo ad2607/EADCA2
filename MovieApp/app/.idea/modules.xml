@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../EAD_CA2.iml" filepath="$PROJECT_DIR$/../EAD_CA2.iml" group="EAD_CA2" />
+      <module fileurl="file://$PROJECT_DIR$/../MovieApp-EAD_CA2.iml" filepath="$PROJECT_DIR$/../MovieApp-EAD_CA2.iml" group="EAD_CA2" />
+      <module fileurl="file://$PROJECT_DIR$/MovieApp-app.iml" filepath="$PROJECT_DIR$/MovieApp-app.iml" group="EAD_CA2/app" />
       <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" group="EAD_CA2/app" />
     </modules>
   </component>
