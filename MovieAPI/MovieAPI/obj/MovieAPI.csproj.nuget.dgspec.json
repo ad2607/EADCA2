@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Glen\\Documents\\College\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj": {}
   },
   "projects": {
@@ -12,14 +13,26 @@
         "projectPath": "C:\\Users\\Glen\\Documents\\College\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
         "packagesPath": "C:\\Users\\Glen\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Glen\\Documents\\College\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\obj\\",
+=======
+    "C:\\Users\\Adam\\Source\\Repos\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Adam\\Source\\Repos\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Adam\\Source\\Repos\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
+        "projectName": "MovieAPI",
+        "projectPath": "C:\\Users\\Adam\\Source\\Repos\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
+        "packagesPath": "C:\\Users\\Adam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Adam\\Source\\Repos\\EADCA2\\MovieAPI\\MovieAPI\\obj\\",
+>>>>>>> 5db7436235db69f15ad7134ed2d095172586ef01
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Glen\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Adam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -42,6 +55,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.CodeAnalysis.FxCopAnalyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.9.8, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[3.1.3, )"

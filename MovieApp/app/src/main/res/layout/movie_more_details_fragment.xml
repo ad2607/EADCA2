@@ -48,7 +48,7 @@
                 android:background="@drawable/movie_title_gradient"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 android:textColor="#FFFFFF"
-                tools:text="Title" />
+                tools:text="@string/Title" />
         </RelativeLayout>
 
         <TableRow
@@ -74,10 +74,29 @@
             android:id="@+id/movieDetailsItem_imdbLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:orientation="vertical"
             android:gravity="center_vertical"
             app:layout_constraintTop_toBottomOf="@id/movieDetailsItem_ratingsLayout"
             app:layout_constraintLeft_toLeftOf="parent">
+=======
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.181"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hr0"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="@string/imdb_rating" />
+>>>>>>> 5db7436235db69f15ad7134ed2d095172586ef01
 
             <TextView
                 android:id="@+id/movieDetailsItem_imdbRating"
@@ -120,6 +139,7 @@
             android:id="@+id/movieDetailsItem_rottenLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:orientation="vertical"
             android:gravity="center_vertical"
             android:paddingTop="24dp"
@@ -167,6 +187,24 @@
 
         </LinearLayout>
 
+=======
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="12dp"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.092"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/movieDetailsItem_imdbRating"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="@string/imdb_rating_title" />
+>>>>>>> 5db7436235db69f15ad7134ed2d095172586ef01
 
         <TableRow
             android:id="@+id/hr1"
@@ -191,8 +229,12 @@
             app:layout_constraintVertical_bias="0.0"
             android:paddingVertical="12dp"
             android:paddingHorizontal="18dp"
+<<<<<<< HEAD
             tools:text="Description Title"
             app:layout_constraintTop_toBottomOf="@id/hr1"/>
+=======
+            tools:text="@string/description_title" />
+>>>>>>> 5db7436235db69f15ad7134ed2d095172586ef01
 
         <TextView
             android:id="@+id/movieDetailsItem_description"
@@ -208,8 +250,12 @@
             app:layout_constraintVertical_bias="0.0"
             android:paddingVertical="12dp"
             android:paddingHorizontal="18dp"
+<<<<<<< HEAD
             tools:text="Description"
             app:layout_constraintTop_toBottomOf="@id/movieDetailsItem_descriptionTitle"/>
+=======
+            tools:text="@string/description" />
+>>>>>>> 5db7436235db69f15ad7134ed2d095172586ef01
 
         <TableRow
             android:id="@+id/hr2"
@@ -234,8 +280,12 @@
             app:layout_constraintVertical_bias="0.0"
             android:paddingVertical="12dp"
             android:paddingHorizontal="18dp"
+<<<<<<< HEAD
             tools:text="Director Title"
             app:layout_constraintTop_toBottomOf="@id/hr2"/>
+=======
+            tools:text="@string/director_title" />
+>>>>>>> 5db7436235db69f15ad7134ed2d095172586ef01
 
         <TextView
             android:id="@+id/movieDetailsItem_director"
@@ -251,8 +301,13 @@
             app:layout_constraintVertical_bias="0.0"
             android:paddingVertical="12dp"
             android:paddingHorizontal="18dp"
+<<<<<<< HEAD
             tools:text="Director"
             app:layout_constraintTop_toBottomOf="@id/movieDetailsItem_directorTitle"/>
+=======
+            app:layout_constraintTop_toBottomOf="@id/movieDetailsItem_directorTitle"
+            tools:text="@string/director" />
+>>>>>>> 5db7436235db69f15ad7134ed2d095172586ef01
 
         <TableRow
             android:id="@+id/hr3"
@@ -277,8 +332,12 @@
             app:layout_constraintVertical_bias="0.0"
             android:paddingVertical="12dp"
             android:paddingHorizontal="18dp"
+<<<<<<< HEAD
             tools:text="Movie Length Title"
             app:layout_constraintTop_toBottomOf="@id/hr3"/>
+=======
+            tools:text="@string/movie_length_title" />
+>>>>>>> 5db7436235db69f15ad7134ed2d095172586ef01
 
         <TextView
             android:id="@+id/movieDetailsItem_length"
@@ -294,8 +353,14 @@
             app:layout_constraintVertical_bias="0.0"
             android:paddingVertical="12dp"
             android:paddingHorizontal="18dp"
+<<<<<<< HEAD
             tools:text="Movie Length"
             app:layout_constraintTop_toBottomOf="@id/movieDetailsItem_lengthTitle"/>
+=======
+            app:layout_constraintTop_toBottomOf="@id/movieDetailsItem_lengthTitle"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="@string/movie_length" />
+>>>>>>> 5db7436235db69f15ad7134ed2d095172586ef01
 
         <TableRow
             android:id="@+id/hr4"
@@ -320,8 +385,12 @@
             app:layout_constraintVertical_bias="0.0"
             android:paddingVertical="12dp"
             android:paddingHorizontal="18dp"
+<<<<<<< HEAD
             tools:text="Release Date Title"
             app:layout_constraintTop_toBottomOf="@id/hr4"/>
+=======
+            tools:text="@string/release_date_title" />
+>>>>>>> 5db7436235db69f15ad7134ed2d095172586ef01
 
         <TextView
             android:id="@+id/movieDetailsItem_releaseDate"
@@ -337,8 +406,14 @@
             app:layout_constraintVertical_bias="0.0"
             android:paddingVertical="12dp"
             android:paddingHorizontal="18dp"
+<<<<<<< HEAD
             tools:text="Release Date"
             app:layout_constraintTop_toBottomOf="@id/movieDetailsItem_releaseDateTitle"/>
+=======
+            app:layout_constraintTop_toBottomOf="@id/movieDetailsItem_releaseDateTitle"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="@string/release_date" />
+>>>>>>> 5db7436235db69f15ad7134ed2d095172586ef01
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
