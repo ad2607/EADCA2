@@ -36,6 +36,7 @@ namespace MovieAPI.Controllers
                         Description = "Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard, who's been missing for thirty years.",
                         Director = "Denis Villeneuve",
                         IMDBRating = 8.0,
+                        RottenTomatoesScore = 87
                     }
                 );
                 _context.Movies.Add(
@@ -48,6 +49,7 @@ namespace MovieAPI.Controllers
                         Description = "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
                         Director = "Anthony Russo, Joe Russo",
                         IMDBRating = 8.5,
+                        RottenTomatoesScore = 85
                     }
                 );
                 _context.Movies.Add(
@@ -60,6 +62,7 @@ namespace MovieAPI.Controllers
                         Description = "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
                         Director = "Anthony Russo, Joe Russo",
                         IMDBRating = 8.4,
+                        RottenTomatoesScore = 94
                     }
                 );
 
@@ -73,6 +76,7 @@ namespace MovieAPI.Controllers
                         Description = "April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1,600 men from walking straight into a deadly trap.",
                         Director = "Sam Mendes",
                         IMDBRating = 8.4,
+                        RottenTomatoesScore = 89
                     }
                 );
 
@@ -86,6 +90,7 @@ namespace MovieAPI.Controllers
                         Description = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
                         Director = "Peter Jackson",
                         IMDBRating = 8.9,
+                        RottenTomatoesScore = 93
                     }
                 );
 
@@ -99,6 +104,7 @@ namespace MovieAPI.Controllers
                         Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
                         Director = "Christopher Nolan",
                         IMDBRating = 9.0,
+                        RottenTomatoesScore = 94
                     }
                 );
 
@@ -112,6 +118,7 @@ namespace MovieAPI.Controllers
                         Description = "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
                         Director = "Peter Jackson",
                         IMDBRating = 8.8,
+                        RottenTomatoesScore = 91
                     }
                 );
 

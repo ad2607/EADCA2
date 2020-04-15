@@ -1,6 +1,6 @@
 package com.glenbyrne.ead_ca2.data.network
 
-import com.glenbyrne.ead_ca2.data.network.response.AllMoviesResponse
+import com.glenbyrne.ead_ca2.data.network.response.MoviesResponse
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import kotlinx.coroutines.Deferred
 import okhttp3.Interceptor
@@ -14,7 +14,7 @@ import retrofit2.http.GET
 interface MovieApiService {
 
     @GET("all")
-    fun getAllMovies(): Deferred<AllMoviesResponse>
+    fun getMoviesAsync(): Deferred<MoviesResponse>
 
     companion object {
         operator fun invoke(
@@ -27,7 +27,8 @@ interface MovieApiService {
 
                 return@Interceptor chain.proceed(request)
             }
-            val okHttpClient = OkHttpClient.Builder().addInterceptor(requestInterceptor).addInterceptor(connectivityInterceptor).build()
+            val okHttpClient = OkHttpClient.Builder().addInterceptor(requestInterceptor)
+                .addInterceptor(connectivityInterceptor).build()
 
             return Retrofit.Builder().client(okHttpClient)
                 .baseUrl("https://movieapi20200406063228.azurewebsites.net/api/Movies/")

@@ -1,7 +1,7 @@
 package com.glenbyrne.ead_ca2.ui.movies.list
 
 import com.glenbyrne.ead_ca2.R
-import com.glenbyrne.ead_ca2.data.db.movieToDbMap.list.MovieSimpleEntryInterface
+import com.glenbyrne.ead_ca2.data.db.mapping.list.MovieSimpleEntryInterface
 import com.glenbyrne.ead_ca2.internal.glide.GlideApp
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder

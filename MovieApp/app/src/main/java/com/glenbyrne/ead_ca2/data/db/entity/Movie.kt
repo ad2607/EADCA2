@@ -11,8 +11,9 @@ data class Movie(
     val director: String,
     @PrimaryKey(autoGenerate = false)
     val id: Int,
-    val length: String,
     val imdbRating: Double,
+    val length: String,
     val releaseDate: String,
+    val rottenTomatoesScore: Int,
     val title: String
 )

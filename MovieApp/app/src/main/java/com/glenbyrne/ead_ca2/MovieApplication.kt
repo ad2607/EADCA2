@@ -17,7 +17,7 @@ class MovieApplication : Application(), KodeinAware {
         import(androidXModule(this@MovieApplication))
 
         bind() from singleton { MovieDatabase(instance()) }
-        bind() from singleton { instance<MovieDatabase>().allMoviesDao() }
+        bind() from singleton { instance<MovieDatabase>().moviesDao() }
         bind<ConnectivityInterceptor>() with singleton { ConnectivityInterceptorImpl(instance()) }
         bind() from singleton { MovieApiService(instance()) }
         bind<MovieNetworkDataSource>() with singleton { MovieNetworkDataSourceImpl(instance()) }

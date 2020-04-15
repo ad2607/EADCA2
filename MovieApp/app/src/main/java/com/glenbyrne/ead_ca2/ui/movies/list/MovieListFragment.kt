@@ -5,14 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.glenbyrne.ead_ca2.R
-import com.glenbyrne.ead_ca2.data.db.movieToDbMap.list.MovieSimpleEntryInterface
+import com.glenbyrne.ead_ca2.data.db.mapping.list.MovieSimpleEntryInterface
+import com.glenbyrne.ead_ca2.ui.MainActivity
 import com.glenbyrne.ead_ca2.ui.base.ScopedFragment
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
@@ -21,6 +20,7 @@ import kotlinx.coroutines.launch
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.instance
+import java.util.*
 
 class MovieListFragment : ScopedFragment(), KodeinAware {
     override val kodein by closestKodein()
@@ -75,6 +75,12 @@ class MovieListFragment : ScopedFragment(), KodeinAware {
                 showMovieDetails(it.movieSimpleEntry.id, view)
             }
         }
+    }
+
+    private fun filter(searchString: String) {
+        var text = searchString
+        text = text.toLowerCase(Locale.getDefault())
+        viewModel.movies
     }
 
     private fun showMovieDetails(id: Int, view: View) {

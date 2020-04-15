@@ -8897,11 +8897,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Glen\\Documents\\College Work\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Glen\\Documents\\College\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
       "projectName": "MovieAPI",
-      "projectPath": "C:\\Users\\Glen\\Documents\\College Work\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
+      "projectPath": "C:\\Users\\Glen\\Documents\\College\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
       "packagesPath": "C:\\Users\\Glen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Glen\\Documents\\College Work\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\obj\\",
+      "outputPath": "C:\\Users\\Glen\\Documents\\College\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

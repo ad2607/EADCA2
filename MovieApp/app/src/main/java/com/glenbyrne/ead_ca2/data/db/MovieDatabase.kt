@@ -8,10 +8,10 @@ import com.glenbyrne.ead_ca2.data.db.entity.Movie
 
 @Database(
     entities = [Movie::class],
-    version = 1
+    version = 2
 )
 abstract class MovieDatabase : RoomDatabase() {
-    abstract fun allMoviesDao(): AllMoviesDao
+    abstract fun moviesDao(): MoviesDao
 
     companion object {
         @Volatile

@@ -1,5 +1,6 @@
 package com.glenbyrne.ead_ca2.ui.movies.detail
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +18,6 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.factory
 import org.threeten.bp.LocalDate
-import org.threeten.bp.format.DateTimeFormatter
 
 class MovieMoreDetailsFragment : ScopedFragment(), KodeinAware {
 
@@ -61,8 +61,10 @@ class MovieMoreDetailsFragment : ScopedFragment(), KodeinAware {
             updateLength(movieEntry.length)
             updateDirectorTitle()
             updateDirector(movieEntry.director)
-            updateRatingTitle()
-            updateRating(movieEntry.imdbRating)
+            updateIMDBRatingTitle()
+            updateIMDBRating(movieEntry.imdbRating)
+            updateRottenTomatoesScoreTitle()
+            updateRottenTomatoesScore(movieEntry.rottenTomatoesScore)
 
             GlideApp.with(this@MovieMoreDetailsFragment)
                 .load("https://movieapi20200406063228.azurewebsites.net/api/Movies/poster?id=" + movieEntry.id)
@@ -107,14 +109,45 @@ class MovieMoreDetailsFragment : ScopedFragment(), KodeinAware {
         movieDetailsItem_director.text = director
     }
 
-    private fun updateRatingTitle() {
+    private fun updateIMDBRatingTitle() {
         movieDetailsItem_imdbRatingTitle.text = "IMDB"
     }
 
-    private fun updateRating(rating: Double) {
-        movieDetailsItem_imdbRating.text = "$rating"
+    private fun updateIMDBRating(imdbRating: Double) {
+        movieDetailsItem_imdbRating.text = "$imdbRating"
+
+        if(imdbRating >= 8) {
+            movieDetailsItem_imdbRating.setTextColor(Color.GREEN)
+        } else if (imdbRating < 8 && imdbRating >= 6) {
+            movieDetailsItem_imdbRating.setTextColor(Color.YELLOW)
+        } else if (imdbRating < 6 && imdbRating >= 4) {
+            movieDetailsItem_imdbRating.setTextColor(Color.rgb(255,165,0))
+        } else {
+            movieDetailsItem_imdbRating.setTextColor(Color.RED)
+        }
     }
 
+    private fun updateRottenTomatoesScoreTitle() {
+        movieDetailsItem_rottenTomatoesScoreTitle.text = "Rotten Tomatoes"
+    }
 
+    private fun updateRottenTomatoesScore(rottenTomatoesScore: Int) {
+        movieDetailsItem_rottenTomatoesScore.text = "$rottenTomatoesScore%"
+
+        when {
+            rottenTomatoesScore >= 80 -> {
+                movieDetailsItem_rottenTomatoesScore.setTextColor(Color.GREEN)
+            }
+            rottenTomatoesScore in 60..79 -> {
+                movieDetailsItem_rottenTomatoesScore.setTextColor(Color.YELLOW)
+            }
+            rottenTomatoesScore in 40..59 -> {
+                movieDetailsItem_rottenTomatoesScore.setTextColor(Color.MAGENTA)
+            }
+            else -> {
+                movieDetailsItem_rottenTomatoesScore.setTextColor(Color.RED)
+            }
+        }
+    }
 
 }

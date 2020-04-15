@@ -30,5 +30,8 @@ namespace MovieAPI.Models
 
         [Required]
         public double IMDBRating { get; set; }
+
+        [Required]
+        public int RottenTomatoesScore { get; set; }
     }
 }

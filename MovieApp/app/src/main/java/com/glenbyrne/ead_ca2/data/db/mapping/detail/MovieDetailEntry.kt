@@ -1,11 +1,8 @@
-package com.glenbyrne.ead_ca2.data.db.movieToDbMap.detail
+package com.glenbyrne.ead_ca2.data.db.mapping.detail
 
 import androidx.room.ColumnInfo
-import com.glenbyrne.ead_ca2.data.db.movieToDbMap.detail.MovieDetailEntryInterface
 
 data class MovieDetailEntry(
-//    @ColumnInfo(name = "actors")
-//    override val actors: List<Actor>,
     @ColumnInfo(name = "description")
     override val description: String,
     @ColumnInfo(name = "director")
@@ -18,6 +15,8 @@ data class MovieDetailEntry(
     override val imdbRating: Double,
     @ColumnInfo(name = "releaseDate")
     override val releaseDate: String,
+    @ColumnInfo(name = "rottenTomatoesScore")
+    override val rottenTomatoesScore: Int,
     @ColumnInfo(name = "title")
     override val title: String
 ) : MovieDetailEntryInterface

@@ -1,18 +1,18 @@
 package com.glenbyrne.ead_ca2.data.repository
 
 import androidx.lifecycle.LiveData
-import com.glenbyrne.ead_ca2.data.db.AllMoviesDao
-import com.glenbyrne.ead_ca2.data.db.movieToDbMap.detail.MovieDetailEntryInterface
-import com.glenbyrne.ead_ca2.data.db.movieToDbMap.list.MovieSimpleEntryInterface
+import com.glenbyrne.ead_ca2.data.db.MoviesDao
+import com.glenbyrne.ead_ca2.data.db.mapping.detail.MovieDetailEntryInterface
+import com.glenbyrne.ead_ca2.data.db.mapping.list.MovieSimpleEntryInterface
 import com.glenbyrne.ead_ca2.data.network.MovieNetworkDataSource
-import com.glenbyrne.ead_ca2.data.network.response.AllMoviesResponse
+import com.glenbyrne.ead_ca2.data.network.response.MoviesResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MovieRepositoryImpl(
-    private val allMoviesDao: AllMoviesDao,
+    private val moviesDao: MoviesDao,
     private val movieNetworkDataSource: MovieNetworkDataSource
 ) : MovieRepository {
 
@@ -28,7 +28,7 @@ class MovieRepositoryImpl(
 
         return withContext(Dispatchers.IO) {
             initMovieData()
-            return@withContext allMoviesDao.getAllMovies()
+            return@withContext moviesDao.getAllMovies()
         }
     }
 
@@ -36,13 +36,13 @@ class MovieRepositoryImpl(
 
         return withContext(Dispatchers.IO) {
             initMovieData()
-            return@withContext allMoviesDao.getMovieDetails(id)
+            return@withContext moviesDao.getMovieDetails(id)
         }
     }
 
-    private fun persistFetchedAllMovies(fetchedMovies: AllMoviesResponse) {
+    private fun persistFetchedAllMovies(fetchedMovies: MoviesResponse) {
         GlobalScope.launch(Dispatchers.IO) {
-            allMoviesDao.insert(fetchedMovies)
+            moviesDao.insert(fetchedMovies)
         }
     }
 

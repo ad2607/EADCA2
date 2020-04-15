@@ -6,11 +6,11 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.glenbyrne.ead_ca2.data.db.entity.Movie
-import com.glenbyrne.ead_ca2.data.db.movieToDbMap.detail.MovieDetailEntry
-import com.glenbyrne.ead_ca2.data.db.movieToDbMap.list.MovieSimpleEntry
+import com.glenbyrne.ead_ca2.data.db.mapping.detail.MovieDetailEntry
+import com.glenbyrne.ead_ca2.data.db.mapping.list.MovieSimpleEntry
 
 @Dao
-interface AllMoviesDao {
+interface MoviesDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(movieEntry: List<Movie>)
 
