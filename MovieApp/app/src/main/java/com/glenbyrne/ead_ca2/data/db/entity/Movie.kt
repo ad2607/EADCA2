@@ -7,8 +7,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "movie", indices = [Index(value = ["id"], unique = true)])
 data class Movie(
-//    @Embedded(prefix = "actors_")
-//    val actors: List<Actor>,
     val description: String,
     val director: String,
     @PrimaryKey(autoGenerate = false)
