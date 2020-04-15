@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,13 +11,13 @@ namespace MovieAPI.Models
     {
         [Key]
         [Required]
-        public string id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Title { get; set; }
 
         [Required]
-        public DateTime ReleaseDate { get; set; }
+        public string ReleaseDate { get; set; }
 
         [Required]
         public string Length { get; set; }
@@ -25,32 +26,9 @@ namespace MovieAPI.Models
         public string Description { get; set; }
 
         [Required]
-        public Director Director { get; set; }
+        public string Director { get; set; }
 
         [Required]
-        public int Rating { get; set; }
-
-        [Required]
-        public List<Actor> Cast { get; set; }
-    }
-
-    public class Director
-    {
-        [Key]
-        [Required]
-        public string Id { get; set; }
-
-        [Required]
-        public string Name { get; set; }
-    }
-
-    public class Actor
-    {
-        [Key]
-        [Required]
-        public string Id { get; set; }
-
-        [Required]
-        public string Name { get; set; }
+        public double IMDBRating { get; set; }
     }
 }

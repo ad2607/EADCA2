@@ -52,6 +52,7 @@ namespace MovieAPI
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie API V1");
     });
+            app.UseStaticFiles();
 
             app.UseHttpsRedirection();
 

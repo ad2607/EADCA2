@@ -17,7 +17,7 @@
              Gets movies with entered name
              </summary>
              <remarks>
-             Sample request:
+             Sample respnse:
             
                  Get /GetMovieByTitle
                  {
@@ -29,6 +29,24 @@
              <returns>Movie with entered name</returns>
              <response code="201">Returns Movie with entered name</response>
              <response code="400">If no movie was retrieved</response>
+        </member>
+        <member name="M:MovieAPI.Controllers.MoviesController.GetMoviePoster(System.Int32)">
+             <summary>
+             Gets Movie poster with id
+             </summary>
+             /// <remarks>
+             Sample respnse:
+            
+                 Get /GetMoviePoster
+                 {
+                    Image
+                 }
+            
+             </remarks>
+             <param name="id"></param>
+             <returns>Movie Poster with id</returns>
+             <response code="201">Returns Movie poster</response>
+             <response code="400">If no movie poster was retrieved</response>
         </member>
     </members>
 </doc>
