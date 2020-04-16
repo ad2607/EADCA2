@@ -1,18 +1,20 @@
 <resources>
     <string name="app_name">EAD_CA2</string>
-    <string name="search_hint">Search</string>
     <string name="Title">Title</string>
     <string name="imdb_rating">IMDB Rating</string>
-    <string name="imdb_rating_title">IMDB Rating Title</string>
-    <string name="description_title">Description Title</string>
+    <string name="imdb_rating_title">IMDB</string>
+    <string name="description_title">Synopsis</string>
     <string name="description">Description</string>
     <string name="director">Director</string>
-    <string name="movie_length_title">Movie Length Title</string>
+    <string name="director_title">Directors</string>
+    <string name="movie_length_title">Movie Length</string>
     <string name="movie_length">Movie Length</string>
-    <string name="release_date_title">Release Date Title</string>
+    <string name="release_date_title">Release Date</string>
     <string name="release_date">Release Date</string>
     <string name="loading">Loading</string>
     <string name="title">Title</string>
-    <string name="search">Search</string>
-    <string name="director_title">Director Title</string>
+    <string name="rottenTomatoesScoreTitle">Rotten Tomatoes</string>
+    <string name="moviePoster">Movie Poster</string>
+    Movie's Poster
+
 </resources>

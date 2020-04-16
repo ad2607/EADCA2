@@ -77,7 +77,7 @@ class MovieMoreDetailsFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun updateDescriptionTitle() {
-        movieDetailsItem_descriptionTitle.text = "Synopsis"
+        movieDetailsItem_descriptionTitle.setText(R.string.description_title)
     }
 
     private fun updateDescription(description: String) {
@@ -85,7 +85,7 @@ class MovieMoreDetailsFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun updateReleaseDateTitle() {
-        movieDetailsItem_releaseDateTitle.text = "Release Date"
+        movieDetailsItem_releaseDateTitle.setText(R.string.release_date_title)
     }
 
     private fun updateReleaseDate(releaseDate: String) {
@@ -94,7 +94,7 @@ class MovieMoreDetailsFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun updateLengthTitle() {
-        movieDetailsItem_lengthTitle.text = "Movie Length"
+        movieDetailsItem_lengthTitle.setText(R.string.movie_length_title)
     }
 
     private fun updateLength(length: String) {
@@ -102,7 +102,7 @@ class MovieMoreDetailsFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun updateDirectorTitle() {
-        movieDetailsItem_directorTitle.text = "Directors"
+        movieDetailsItem_directorTitle.setText(R.string.director_title)
     }
 
     private fun updateDirector(director: String) {
@@ -110,7 +110,7 @@ class MovieMoreDetailsFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun updateIMDBRatingTitle() {
-        movieDetailsItem_imdbRatingTitle.text = "IMDB"
+        movieDetailsItem_imdbRatingTitle.setText(R.string.imdb_rating_title)
     }
 
     private fun updateIMDBRating(imdbRating: Double) {
@@ -128,7 +128,7 @@ class MovieMoreDetailsFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun updateRottenTomatoesScoreTitle() {
-        movieDetailsItem_rottenTomatoesScoreTitle.text = "Rotten Tomatoes"
+        movieDetailsItem_rottenTomatoesScoreTitle.setText(R.string.rottenTomatoesScoreTitle)
     }
 
     private fun updateRottenTomatoesScore(rottenTomatoesScore: Int) {
@@ -142,7 +142,7 @@ class MovieMoreDetailsFragment : ScopedFragment(), KodeinAware {
                 movieDetailsItem_rottenTomatoesScore.setTextColor(Color.YELLOW)
             }
             rottenTomatoesScore in 40..59 -> {
-                movieDetailsItem_rottenTomatoesScore.setTextColor(Color.MAGENTA)
+                movieDetailsItem_rottenTomatoesScore.setTextColor(Color.rgb(255,165,0))
             }
             else -> {
                 movieDetailsItem_rottenTomatoesScore.setTextColor(Color.RED)
