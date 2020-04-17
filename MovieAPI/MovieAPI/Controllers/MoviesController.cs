@@ -122,6 +122,76 @@ namespace MovieAPI.Controllers
                     }
                 );
 
+                _context.Movies.Add(
+                    new Movie
+                    {
+                        Id = 8,
+                        Title = "Star Wars: The Rise of Skywalker",
+                        ReleaseDate = DateTime.Parse("2019-12-19").ToString("yyyy-MM-dd"),
+                        Length = "2h 22min",
+                        Description = "The surviving members of the resistance face the First Order once again, and the legendary conflict between the Jedi and the Sith reaches its peak bringing the Skywalker saga to its end.",
+                        Director = "J.J. Abrams",
+                        IMDBRating = 6.7,
+                        RottenTomatoesScore = 52
+                    }
+                );
+
+                _context.Movies.Add(
+                    new Movie
+                    {
+                        Id = 9,
+                        Title = "Joker",
+                        ReleaseDate = DateTime.Parse("2019-10-04").ToString("yyyy-MM-dd"),
+                        Length = "2h 02min",
+                        Description = "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.",
+                        Director = "Todd Phillips",
+                        IMDBRating = 8.5,
+                        RottenTomatoesScore = 68
+                    }
+                );
+
+                _context.Movies.Add(
+                    new Movie
+                    {
+                        Id = 10,
+                        Title = "The Shawshank Redemption",
+                        ReleaseDate = DateTime.Parse("1995-02-17").ToString("yyyy-MM-dd"),
+                        Length = "2h 22min",
+                        Description = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+                        Director = "Frank Darabont",
+                        IMDBRating = 9.3,
+                        RottenTomatoesScore = 90
+                    }
+                );
+
+                _context.Movies.Add(
+                    new Movie
+                    {
+                        Id = 11,
+                        Title = "Sonic the Hedgehog",
+                        ReleaseDate = DateTime.Parse("2020-02-14").ToString("yyyy-MM-dd"),
+                        Length = "1h 39min",
+                        Description = "After discovering a small, blue, fast hedgehog, a small-town police officer must help it defeat an evil genius who wants to do experiments on it.",
+                        Director = "Jeff Fowler",
+                        IMDBRating = 6.6,
+                        RottenTomatoesScore = 64
+                    }
+                );
+
+                _context.Movies.Add(
+                    new Movie
+                    {
+                        Id = 12,
+                        Title = "Inception",
+                        ReleaseDate = DateTime.Parse("2010-07-16").ToString("yyyy-MM-dd"),
+                        Length = "2h 28min",
+                        Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+                        Director = "Christopher Nolan",
+                        IMDBRating = 8.8,
+                        RottenTomatoesScore = 87
+                    }
+                );
+
                 _context.SaveChanges();
             }
         }

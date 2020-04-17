@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movieapp/app_localizations.dart';
 import 'package:movieapp/domain/entities/movie.dart';
 import 'package:movieapp/presentation/bloc/movie_bloc.dart';
 import 'package:movieapp/presentation/widgets/movie_list/movie_list_item.dart';
@@ -38,7 +39,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
                     color: Colors.white,
                   ),
                 ),
-                labelText: 'Search',
+                labelText: AppLocalizations.of(context).translate('search'),
                 labelStyle: TextStyle(color: Colors.white),
               ),
               style: TextStyle(color: Colors.white),
@@ -59,7 +60,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
             child: Container(
               padding: EdgeInsets.only(top: 300),
               child: Text(
-                'No movies found',
+                AppLocalizations.of(context).translate('no_movies_found'),
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -90,7 +91,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
                   color: Colors.white,
                 ),
               ),
-              labelText: 'Search',
+              labelText: AppLocalizations.of(context).translate('search'),
               labelStyle: TextStyle(color: Colors.white),
             ),
             style: TextStyle(color: Colors.white),

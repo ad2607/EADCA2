@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieapp/app_localizations.dart';
 
 class ErrorStateWidget extends StatefulWidget {
   @override
@@ -10,7 +11,9 @@ class _ErrorStateWidgetState extends State<ErrorStateWidget> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text('ERROR'),
+        child: Text(
+          AppLocalizations.of(context).translate('error'),
+        ),
       ),
     );
   }

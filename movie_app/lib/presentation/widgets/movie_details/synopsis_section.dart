@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieapp/app_localizations.dart';
 
 class SynopsisSection extends StatefulWidget {
   final String synopsis;
@@ -21,7 +22,7 @@ class _SynopsisSectionState extends State<SynopsisSection> {
           Container(
             padding: EdgeInsets.symmetric(vertical: 8),
             child: Text(
-              'Synopsis',
+              AppLocalizations.of(context).translate('synopsis'),
               textAlign: TextAlign.left,
               style: TextStyle(
                 color: Colors.white,

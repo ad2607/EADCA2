@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieapp/app_localizations.dart';
 
 class ReleaseDateSection extends StatefulWidget {
   final String releaseDate;
@@ -23,7 +24,7 @@ class _ReleaseDateSectionState extends State<ReleaseDateSection> {
           Container(
             padding: EdgeInsets.symmetric(vertical: 8),
             child: Text(
-              'Release Date',
+              AppLocalizations.of(context).translate('release_date'),
               textAlign: TextAlign.left,
               style: TextStyle(
                 color: Colors.white,

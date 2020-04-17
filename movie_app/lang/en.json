@@ -1,0 +1,12 @@
+{
+    "no_movies_found": "No movies found",
+    "search": "Search",
+    "error": "Error",
+    "failure_state_text": "Something went wrong... the state you tried to use is not a real state",
+    "directors": "Directors",
+    "movie_length": "Movie Length",
+    "release_date": "Release Date",
+    "imdb": "IMDB",
+    "rotten_tomatoes": "Rotten Tomatoes",
+    "synopsis": "Synopsis"
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieapp/app_localizations.dart';
 
 class ReviewScoreSection extends StatefulWidget {
   final double imdbRating;
@@ -37,7 +38,7 @@ class _ReviewScoreSectionState extends State<ReviewScoreSection> {
                   width: 120,
                   margin: EdgeInsets.only(top: 30),
                   child: Text(
-                    'IMDB',
+                    AppLocalizations.of(context).translate('imdb'),
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -69,7 +70,7 @@ class _ReviewScoreSectionState extends State<ReviewScoreSection> {
                   width: 120,
                   margin: EdgeInsets.only(top: 30),
                   child: Text(
-                    'Rotten Tomatoes',
+                    AppLocalizations.of(context).translate('rotten_tomatoes'),
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,

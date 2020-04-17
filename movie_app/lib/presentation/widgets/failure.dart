@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieapp/app_localizations.dart';
 
 class FailureWidget extends StatefulWidget {
   @override
@@ -10,7 +11,9 @@ class _FailureWidgetState extends State<FailureWidget> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text('Soemthing went wrong... the state you tried to use is not a real state'),
+        child: Text(
+          AppLocalizations.of(context).translate('failure_state_text'),
+        ),
       ),
     );
   }

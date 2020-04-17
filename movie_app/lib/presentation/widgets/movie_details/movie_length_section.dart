@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieapp/app_localizations.dart';
 
 class MovieLengthSection extends StatefulWidget {
   final String length;
@@ -21,7 +22,7 @@ class _MovieLengthSectionState extends State<MovieLengthSection> {
           Container(
             padding: EdgeInsets.symmetric(vertical: 8),
             child: Text(
-              'Movie Length',
+              AppLocalizations.of(context).translate('movie_length'),
               textAlign: TextAlign.left,
               style: TextStyle(
                 color: Colors.white,

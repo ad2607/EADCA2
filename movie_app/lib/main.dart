@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movieapp/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:movieapp/router.gr.dart';
 import 'package:movieapp/themes/bloc/theme_bloc.dart';
 import 'injection_container.dart' as di;
@@ -36,6 +38,24 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: Router.onGenerateRoute,
         navigatorKey: Router.navigator.key,
         theme: state.themeData,
+        supportedLocales: [
+          Locale('en'),
+          Locale('de'),
+        ],
+        localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      localeResolutionCallback: (locale, supportedLocales) {
+        for (var supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale.languageCode &&
+              supportedLocale.countryCode == locale.countryCode) {
+            return supportedLocale;
+          }
+        }
+        return supportedLocales.first;
+      },
       ),
     );
   }

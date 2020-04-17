@@ -1,0 +1,12 @@
+{
+    "no_movies_found": "Keine Filme gefunden",
+    "search": "Suche",
+    "error": "Error",
+    "failure_state_text": "Es ist ein Fehler aufgetreten ... Der Status, den Sie verwendet haben, ist kein realer Status",
+    "directors": "Direktoren",
+    "movie_length": "Filmlänge",
+    "release_date": "Veröffentlichungsdatum",
+    "imdb": "IMDB",
+    "rotten_tomatoes": "Verrottete Tomaten",
+    "synopsis": "Zusammenfassung"
+}

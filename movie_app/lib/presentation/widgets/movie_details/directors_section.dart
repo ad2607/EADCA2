@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieapp/app_localizations.dart';
 
 class DirectorsSection extends StatefulWidget {
   final String directors;
@@ -21,7 +22,7 @@ class _DirectorsSectionState extends State<DirectorsSection> {
           Container(
             padding: EdgeInsets.symmetric(vertical: 8),
             child: Text(
-              'Directors',
+              AppLocalizations.of(context).translate('directors'),
               textAlign: TextAlign.left,
               style: TextStyle(
                 color: Colors.white,

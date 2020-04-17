@@ -1428,8 +1428,8 @@
         },
         "runtime": {
           "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {
-            "assemblyVersion": "5.3.1.0",
-            "fileVersion": "5.3.1.0"
+            "assemblyVersion": "5.3.2.0",
+            "fileVersion": "5.3.2.0"
           }
         },
         "compile": {
@@ -1442,8 +1442,8 @@
         },
         "runtime": {
           "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
-            "assemblyVersion": "5.3.1.0",
-            "fileVersion": "5.3.1.0"
+            "assemblyVersion": "5.3.2.0",
+            "fileVersion": "5.3.2.0"
           }
         },
         "compile": {
@@ -1453,8 +1453,8 @@
       "Swashbuckle.AspNetCore.SwaggerUI/5.3.2": {
         "runtime": {
           "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
-            "assemblyVersion": "5.3.1.0",
-            "fileVersion": "5.3.1.0"
+            "assemblyVersion": "5.3.2.0",
+            "fileVersion": "5.3.2.0"
           }
         },
         "compile": {
