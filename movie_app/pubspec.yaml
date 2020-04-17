@@ -1,0 +1,33 @@
+name: movieapp
+description: A new Flutter application.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_bloc: ^3.2.0
+  equatable: ^1.1.1
+  rxdart: ^0.23.1
+  dartz: ^0.8.9
+  provider: ^4.0.4
+  mockito: ^4.1.1
+  data_connection_checker: ^0.3.4
+  get_it: ^4.0.1
+  auto_route: ^0.3.1
+  http: ^0.12.0+4
+
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  auto_route_generator: ^0.3.1
+  build_runner:
+
+flutter:
+  uses-material-design: true

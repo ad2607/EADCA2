@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "title": "The Dark Knight",
+        "releaseDate": "2008-12-09",
+        "length": "2h 30mins",
+        "description": "Test Description",
+        "director": "Christopher Nolan",
+        "imdbRating": 9.5,
+        "rottenTomatoesScore": 92
+    }
+]
