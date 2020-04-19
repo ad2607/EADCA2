@@ -31,12 +31,7 @@ class _MovieListPageState extends State<MovieListPage> {
                   if (state is MovieInitial) {
                     return MovieListInitialLoad();
                   } else if (state is Loaded) {
-                    return Expanded(
-                      child: Scaffold(
-                        backgroundColor: Theme.of(context).primaryColor,
-                        body: MovieListWidget(movies: state.movies),
-                      ),
-                    );
+                    return MovieListWidget(movies: state.movies);
                   } else if (state is Loading) {
                     return LoadingWidget();
                   } else if (state is Error) {

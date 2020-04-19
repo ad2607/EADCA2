@@ -15,11 +15,4 @@ final appThemeData = {
       fillColor: Colors.white,
     ),
   ),
-  AppTheme.Dark: ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: Color.fromRGBO(29, 29, 39, 1),
-    inputDecorationTheme: InputDecorationTheme(
-      fillColor: Colors.white,
-    ),
-  ),
 };
