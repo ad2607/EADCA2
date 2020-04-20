@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Glen\\Documents\\College\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj": {}
+    "C:\\Users\\Adam\\Source\\Repos\\EADCA22\\MovieAPI\\MovieAPI\\MovieAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Glen\\Documents\\College\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj": {
+    "C:\\Users\\Adam\\Source\\Repos\\EADCA22\\MovieAPI\\MovieAPI\\MovieAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Glen\\Documents\\College\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Adam\\Source\\Repos\\EADCA22\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
         "projectName": "MovieAPI",
-        "projectPath": "C:\\Users\\Glen\\Documents\\College\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
-        "packagesPath": "C:\\Users\\Glen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Glen\\Documents\\College\\EAD2\\EADCA2\\MovieAPI\\MovieAPI\\obj\\",
+        "projectPath": "C:\\Users\\Adam\\Source\\Repos\\EADCA22\\MovieAPI\\MovieAPI\\MovieAPI.csproj",
+        "packagesPath": "C:\\Users\\Adam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Adam\\Source\\Repos\\EADCA22\\MovieAPI\\MovieAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Glen\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Adam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -95,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

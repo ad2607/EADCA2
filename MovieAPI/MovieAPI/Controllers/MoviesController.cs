@@ -36,9 +36,10 @@ namespace MovieAPI.Controllers
                         Description = "Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard, who's been missing for thirty years.",
                         Director = "Denis Villeneuve",
                         IMDBRating = 8.0,
-                        RottenTomatoesScore = 87
+                        RottenTomatoesScore = 87,
+                        TotalRatings = {5}
                     }
-                );
+                ) ;
                 _context.Movies.Add(
                     new Movie
                     {
@@ -49,7 +50,8 @@ namespace MovieAPI.Controllers
                         Description = "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
                         Director = "Anthony Russo, Joe Russo",
                         IMDBRating = 8.5,
-                        RottenTomatoesScore = 85
+                        RottenTomatoesScore = 85,
+                        TotalRatings = { 5 }
                     }
                 );
                 _context.Movies.Add(
@@ -62,7 +64,8 @@ namespace MovieAPI.Controllers
                         Description = "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
                         Director = "Anthony Russo, Joe Russo",
                         IMDBRating = 8.4,
-                        RottenTomatoesScore = 94
+                        RottenTomatoesScore = 94,
+                        TotalRatings = {3}
                     }
                 );
 
@@ -76,7 +79,9 @@ namespace MovieAPI.Controllers
                         Description = "April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1,600 men from walking straight into a deadly trap.",
                         Director = "Sam Mendes",
                         IMDBRating = 8.4,
-                        RottenTomatoesScore = 89
+                        RottenTomatoesScore = 89,
+                        TotalRatings = {3 }
+
                     }
                 );
 
@@ -90,7 +95,8 @@ namespace MovieAPI.Controllers
                         Description = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
                         Director = "Peter Jackson",
                         IMDBRating = 8.9,
-                        RottenTomatoesScore = 93
+                        RottenTomatoesScore = 93,
+                        TotalRatings = {5}
                     }
                 );
 
@@ -104,7 +110,8 @@ namespace MovieAPI.Controllers
                         Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
                         Director = "Christopher Nolan",
                         IMDBRating = 9.0,
-                        RottenTomatoesScore = 94
+                        RottenTomatoesScore = 94,
+                        TotalRatings = { 5 }
                     }
                 );
 
@@ -118,7 +125,8 @@ namespace MovieAPI.Controllers
                         Description = "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
                         Director = "Peter Jackson",
                         IMDBRating = 8.8,
-                        RottenTomatoesScore = 91
+                        RottenTomatoesScore = 91,
+                        TotalRatings = { 4 }
                     }
                 );
 
@@ -132,7 +140,8 @@ namespace MovieAPI.Controllers
                         Description = "The surviving members of the resistance face the First Order once again, and the legendary conflict between the Jedi and the Sith reaches its peak bringing the Skywalker saga to its end.",
                         Director = "J.J. Abrams",
                         IMDBRating = 6.7,
-                        RottenTomatoesScore = 52
+                        RottenTomatoesScore = 52,
+                        TotalRatings = { 5 }
                     }
                 );
 
@@ -146,7 +155,8 @@ namespace MovieAPI.Controllers
                         Description = "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.",
                         Director = "Todd Phillips",
                         IMDBRating = 8.5,
-                        RottenTomatoesScore = 68
+                        RottenTomatoesScore = 68,
+                        TotalRatings = { 5 }
                     }
                 );
 
@@ -160,7 +170,8 @@ namespace MovieAPI.Controllers
                         Description = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
                         Director = "Frank Darabont",
                         IMDBRating = 9.3,
-                        RottenTomatoesScore = 90
+                        RottenTomatoesScore = 90,
+                        TotalRatings = { 5 }
                     }
                 );
 
@@ -174,7 +185,8 @@ namespace MovieAPI.Controllers
                         Description = "After discovering a small, blue, fast hedgehog, a small-town police officer must help it defeat an evil genius who wants to do experiments on it.",
                         Director = "Jeff Fowler",
                         IMDBRating = 6.6,
-                        RottenTomatoesScore = 64
+                        RottenTomatoesScore = 64,
+                        TotalRatings = {1}
                     }
                 );
 
@@ -188,7 +200,8 @@ namespace MovieAPI.Controllers
                         Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
                         Director = "Christopher Nolan",
                         IMDBRating = 8.8,
-                        RottenTomatoesScore = 87
+                        RottenTomatoesScore = 87,
+                        TotalRatings = { 3}
                     }
                 );
 
@@ -267,5 +280,34 @@ namespace MovieAPI.Controllers
             return File(image, "image/jpeg");
         }
 
+
+        [HttpPut("{Movie:id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]          // ok no content
+        [ProducesResponseType(StatusCodes.Status404NotFound)]           // not found
+        // update a listing i.e. update the price for specified ticker
+        public IActionResult PutUpdateListing([FromRoute] int id, [FromBody] Movie rating)
+        {
+            // automatic model state validation (400)
+
+            if (id == rating.Id)
+            {
+                var record = _context.Movies.SingleOrDefault(l => l.Id == id);
+                if (record == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    record.TotalRatings = rating.TotalRatings;              
+                    _context.SaveChanges();
+                    return NoContent();                         
+                                                                
+                }
+            }
+            else
+            {
+                return BadRequest("invalid id");            // 400
+            }
+        }
     }
 }

@@ -306,3 +306,11 @@ C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\obj\Debug\netcorea
 C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.dll
 C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.pdb
 C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.csprojAssemblyReference.cache
+C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.csprojAssemblyReference.cache
+C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.csproj.CoreCompileInputs.cache
+C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.AssemblyInfoInputs.cache
+C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.AssemblyInfo.cs
+C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.dll
+C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Debug\netcoreapp3.1\MovieAPI.pdb
