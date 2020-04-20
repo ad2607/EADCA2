@@ -35,7 +35,13 @@ namespace MovieAPI.Models
         public int RottenTomatoesScore { get; set; }
 
         [Required]
-        public List<int> TotalRatings { get; set; }
+        public List<UserRating> userRatings { get; set; }
 
+    }
+
+    public class UserRating
+    {
+        public int id { get; set; }
+        public int Rating { get; set; }
     }
 }

@@ -37,7 +37,10 @@ namespace MovieAPI.Controllers
                         Director = "Denis Villeneuve",
                         IMDBRating = 8.0,
                         RottenTomatoesScore = 87,
-                        TotalRatings = {5}
+                        userRatings = new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
                     }
                 ) ;
                 _context.Movies.Add(
@@ -51,7 +54,10 @@ namespace MovieAPI.Controllers
                         Director = "Anthony Russo, Joe Russo",
                         IMDBRating = 8.5,
                         RottenTomatoesScore = 85,
-                        TotalRatings = { 5 }
+                        userRatings = new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
                     }
                 );
                 _context.Movies.Add(
@@ -65,7 +71,10 @@ namespace MovieAPI.Controllers
                         Director = "Anthony Russo, Joe Russo",
                         IMDBRating = 8.4,
                         RottenTomatoesScore = 94,
-                        TotalRatings = {3}
+                        userRatings = new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
                     }
                 );
 
@@ -80,7 +89,10 @@ namespace MovieAPI.Controllers
                         Director = "Sam Mendes",
                         IMDBRating = 8.4,
                         RottenTomatoesScore = 89,
-                        TotalRatings = {3 }
+                        userRatings = new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
 
                     }
                 );
@@ -96,7 +108,10 @@ namespace MovieAPI.Controllers
                         Director = "Peter Jackson",
                         IMDBRating = 8.9,
                         RottenTomatoesScore = 93,
-                        TotalRatings = {5}
+                        userRatings = new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
                     }
                 );
 
@@ -111,7 +126,10 @@ namespace MovieAPI.Controllers
                         Director = "Christopher Nolan",
                         IMDBRating = 9.0,
                         RottenTomatoesScore = 94,
-                        TotalRatings = { 5 }
+                        userRatings = new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
                     }
                 );
 
@@ -126,7 +144,10 @@ namespace MovieAPI.Controllers
                         Director = "Peter Jackson",
                         IMDBRating = 8.8,
                         RottenTomatoesScore = 91,
-                        TotalRatings = { 4 }
+                        userRatings = new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
                     }
                 );
 
@@ -141,7 +162,10 @@ namespace MovieAPI.Controllers
                         Director = "J.J. Abrams",
                         IMDBRating = 6.7,
                         RottenTomatoesScore = 52,
-                        TotalRatings = { 5 }
+                        userRatings = new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
                     }
                 );
 
@@ -156,7 +180,10 @@ namespace MovieAPI.Controllers
                         Director = "Todd Phillips",
                         IMDBRating = 8.5,
                         RottenTomatoesScore = 68,
-                        TotalRatings = { 5 }
+                        userRatings = new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
                     }
                 );
 
@@ -171,7 +198,10 @@ namespace MovieAPI.Controllers
                         Director = "Frank Darabont",
                         IMDBRating = 9.3,
                         RottenTomatoesScore = 90,
-                        TotalRatings = { 5 }
+                        userRatings = new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
                     }
                 );
 
@@ -186,7 +216,10 @@ namespace MovieAPI.Controllers
                         Director = "Jeff Fowler",
                         IMDBRating = 6.6,
                         RottenTomatoesScore = 64,
-                        TotalRatings = {1}
+                        userRatings = new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
                     }
                 );
 
@@ -201,7 +234,10 @@ namespace MovieAPI.Controllers
                         Director = "Christopher Nolan",
                         IMDBRating = 8.8,
                         RottenTomatoesScore = 87,
-                        TotalRatings = { 3}
+                        userRatings =new List<UserRating>()
+                        {
+                            new UserRating()
+                        }
                     }
                 );
 
@@ -298,7 +334,7 @@ namespace MovieAPI.Controllers
                 }
                 else
                 {
-                    record.TotalRatings = rating.TotalRatings;              
+                    record.userRatings = rating.userRatings;              
                     _context.SaveChanges();
                     return NoContent();                         
                                                                 
