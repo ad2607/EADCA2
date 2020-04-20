@@ -317,11 +317,11 @@ namespace MovieAPI.Controllers
         }
 
 
-        [HttpPut("{Movie:id}")]
+        [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]          // ok no content
         [ProducesResponseType(StatusCodes.Status404NotFound)]           // not found
         // update a listing i.e. update the price for specified ticker
-        public IActionResult PutUpdateListing([FromRoute] int id, [FromBody] Movie rating)
+        public IActionResult PutUpdateListing(int id, [FromBody] Movie rating)
         {
             // automatic model state validation (400)
 
