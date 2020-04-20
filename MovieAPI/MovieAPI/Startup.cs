@@ -27,7 +27,7 @@ namespace MovieAPI
             services.AddDbContext<MovieContext>(opt =>
                opt.UseInMemoryDatabase("Movies"));
 
-            services.AddControllers();x
+            services.AddControllers();
 
             services.AddSwaggerGen(c =>
     {
