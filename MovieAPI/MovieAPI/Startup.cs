@@ -25,9 +25,10 @@ namespace MovieAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<MovieContext>(opt =>
-               opt.UseInMemoryDatabase("Movies"));
+               opt.UseLazyLoadingProxies().UseInMemoryDatabase("Movies"));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddSwaggerGen(c =>
     {

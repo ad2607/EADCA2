@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MovieAPI.Models
 {
+    [Table("Movies")]
     public class Movie
     {
         [Key]
@@ -35,13 +37,19 @@ namespace MovieAPI.Models
         public int RottenTomatoesScore { get; set; }
 
         [Required]
-        public List<UserRating> userRatings { get; set; }
+        public virtual ICollection<UserRating> UserRatings { get; set; }
 
     }
 
+    [Table("UserRating")]
     public class UserRating
     {
-        public int id { get; set; }
+        [Key]
+        [Required]
+        public int Id { get; set; }
+
+        [Required]
+        [Range(1, 10)]
         public int Rating { get; set; }
     }
 }

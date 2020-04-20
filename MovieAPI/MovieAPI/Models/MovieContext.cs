@@ -11,5 +11,6 @@ namespace MovieAPI.Models
         }
 
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<UserRating> UserRatings { get; set; }
     }
 }
