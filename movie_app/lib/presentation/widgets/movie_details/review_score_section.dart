@@ -210,20 +210,26 @@ class _ReviewScoreSectionState extends State<ReviewScoreSection> {
         // return object of type Dialog
         return AlertDialog(
           title: Text("Rate this Movie"),
-          content: RatingBar(
-            initialRating: 5,
-            minRating: 1,
-            direction: Axis.horizontal,
-            allowHalfRating: false,
-            itemCount: 10,
-            itemBuilder: (context, _) => Icon(
-              Icons.star,
-              color: Colors.amber,
-            ),
-            onRatingUpdate: (newRating) {
-              rating = newRating.toInt();
-              print(newRating);
-            },
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              RatingBar(
+                initialRating: 5,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: false,
+                itemCount: 10,
+                itemSize: 50.0,
+                itemBuilder: (context, _) => Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
+                onRatingUpdate: (newRating) {
+                  rating = newRating.toInt();
+                  print(newRating);
+                },
+              ),
+            ],
           ),
           actions: <Widget>[
             // usually buttons at the bottom of the dialog
