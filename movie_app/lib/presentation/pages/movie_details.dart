@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movieapp/domain/entities/movie.dart';
-import 'package:movieapp/presentation/widgets/movie_details/directors_section.dart';
-import 'package:movieapp/presentation/widgets/movie_details/movie_length_section.dart';
-import 'package:movieapp/presentation/widgets/movie_details/poster_section.dart';
-import 'package:movieapp/presentation/widgets/movie_details/release_date_section.dart';
-import 'package:movieapp/presentation/widgets/movie_details/review_score_section.dart';
-import 'package:movieapp/presentation/widgets/movie_details/section_divider.dart';
-import 'package:movieapp/presentation/widgets/movie_details/synopsis_section.dart';
+import 'package:movieapp/injection_container.dart';
+import 'package:movieapp/presentation/bloc/movie_details_bloc/movie_details_bloc.dart';
+import 'package:movieapp/presentation/widgets/error_state_widget.dart';
+import 'package:movieapp/presentation/widgets/failure.dart';
+import 'package:movieapp/presentation/widgets/loading.dart';
+import 'package:movieapp/presentation/widgets/movie_details/movie_details_widget.dart';
 
 class MovieDetailsPage extends StatefulWidget {
   final Movie movie;
@@ -18,40 +18,54 @@ class MovieDetailsPage extends StatefulWidget {
 }
 
 class _MovieDetailsPageState extends State<MovieDetailsPage> {
+  List<Movie> currentMovieList;
+
+  Future<bool> _onBackPressed() async {
+    if (currentMovieList != null) {
+      Navigator.of(context).pop(currentMovieList);
+    } else {
+      Navigator.of(context).pop();
+    }
+
+    return false;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            PosterSection(
-              id: widget.movie.id,
-              title: widget.movie.title,
-            ),
-            SectionDivider(),
-            ReviewScoreSection(
-              imdbRating: widget.movie.imdbRating,
-              rottenTomatoesScore: widget.movie.rottenTomatoesScore,
-            ),
-            SectionDivider(),
-            SynopsisSection(
-              synopsis: widget.movie.description,
-            ),
-            SectionDivider(),
-            DirectorsSection(
-              directors: widget.movie.director,
-            ),
-            SectionDivider(),
-            MovieLengthSection(
-              length: widget.movie.length,
-            ),
-            SectionDivider(),
-            ReleaseDateSection(
-              releaseDate: widget.movie.releaseDate,
-            ),
-          ],
-        ),
+    return WillPopScope(
+      onWillPop: _onBackPressed,
+      child: buildBody(context),
+    );
+  }
+
+  BlocProvider<MovieDetailsBloc> buildBody(BuildContext context) {
+    return BlocProvider(
+      create: (_) => sl<MovieDetailsBloc>(),
+      child: Column(
+        children: <Widget>[
+          BlocListener<MovieDetailsBloc, MovieDetailsState>(
+              listener: (context, state) {
+            if (state is UserRatingAdded) {
+              setState(() {
+                currentMovieList = state.movieList;
+              });
+            }
+          }, child: BlocBuilder<MovieDetailsBloc, MovieDetailsState>(
+            builder: (context, state) {
+              if (state is MovieDetailsInitial) {
+                return MovieDetailsWidget(movie: widget.movie);
+              } else if (state is UserRatingAdded) {
+                return MovieDetailsWidget(movie: state.movie);
+              } else if (state is Loading) {
+                return LoadingWidget();
+              } else if (state is Error) {
+                return ErrorStateWidget();
+              } else {
+                return FailureWidget();
+              }
+            },
+          )),
+        ],
       ),
     );
   }

@@ -8,5 +8,7 @@
     "release_date": "Veröffentlichungsdatum",
     "imdb": "IMDB",
     "rotten_tomatoes": "Verrottete Tomaten",
-    "synopsis": "Zusammenfassung"
+    "synopsis": "Zusammenfassung",
+    "users": "Benutzer",
+    "none": "Keiner"
 }

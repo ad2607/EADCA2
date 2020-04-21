@@ -44,4 +44,21 @@ class MovieRepositoryImpl implements MovieRepository {
     }
     return Left(UnknownFailure());
   }
+
+  @override
+  Future<Either<Failure, Movie>> addUserRating(
+    Movie movie,
+    int userRating
+  ) async {
+    if (await networkInfo.isConnected) {
+      try {
+        final remoteMovies =
+            await movieRemoteDataSource.addUserRating(movie, userRating);
+        return Right(remoteMovies);
+      } on ServerException {
+        return Left(ServerFailure());
+      }
+    }
+    return Left(UnknownFailure());
+  }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movieapp/app_localizations.dart';
 import 'package:movieapp/domain/entities/movie.dart';
-import 'package:movieapp/presentation/bloc/movie_bloc.dart';
+import 'package:movieapp/presentation/bloc/movie_list_bloc/movie_bloc.dart';
 import 'package:movieapp/presentation/widgets/movie_list/movie_list_item.dart';
 
 class MovieListWidget extends StatefulWidget {
@@ -15,8 +15,13 @@ class MovieListWidget extends StatefulWidget {
 }
 
 class _MovieListWidgetState extends State<MovieListWidget> {
+  List<Movie> currentMovies;
   @override
   Widget build(BuildContext context) {
+    if (currentMovies == null) {
+      currentMovies = widget.movies;
+    }
+
     if (widget.movies.isEmpty) {
       return Expanded(
         child: Scaffold(
@@ -85,11 +90,11 @@ class _MovieListWidgetState extends State<MovieListWidget> {
         backgroundColor: Theme.of(context).primaryColor,
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(80),
-                  child: AppBar(
-                    elevation: 20,
+          child: AppBar(
+            elevation: 20,
             actions: <Widget>[
               Expanded(
-                            child: Container(
+                child: Container(
                   padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                   child: TextFormField(
                     decoration: InputDecoration(
@@ -108,7 +113,8 @@ class _MovieListWidgetState extends State<MovieListWidget> {
                           color: Colors.white,
                         ),
                       ),
-                      labelText: AppLocalizations.of(context).translate('search'),
+                      labelText:
+                          AppLocalizations.of(context).translate('search'),
                       labelStyle: TextStyle(color: Colors.white),
                     ),
                     style: TextStyle(color: Colors.white),
@@ -136,8 +142,11 @@ class _MovieListWidgetState extends State<MovieListWidget> {
                 crossAxisCount: 3,
                 childAspectRatio: 2 / 4.7,
                 children: <Widget>[
-                  for (var movies in widget.movies)
-                    MovieListItem(movie: movies),
+                  for (var movies in currentMovies)
+                    MovieListItem(
+                      movie: movies,
+                      callback: _updateMovieList,
+                    ),
                 ],
               ),
             ),
@@ -159,5 +168,13 @@ class _MovieListWidgetState extends State<MovieListWidget> {
     BlocProvider.of<MovieBloc>(context).add(
       InitialLoadRequested(),
     );
+  }
+
+  void _updateMovieList(value) {
+    if (value != null) {
+      setState(() {
+        currentMovies = value;
+      });
+    }
   }
 }

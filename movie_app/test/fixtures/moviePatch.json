@@ -1,0 +1,9 @@
+[
+    {
+      "value": [{"rating": 8}],
+      "operationType": 0,
+      "path": "/userRatings",
+      "op": "add",
+      "from": "string"
+    }
+]

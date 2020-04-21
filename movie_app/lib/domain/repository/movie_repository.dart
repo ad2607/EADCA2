@@ -7,4 +7,8 @@ abstract class MovieRepository {
   Future<Either<Failure, List<Movie>>> searchMovies(
     String searchTerm,
   );
+  Future<Either<Failure, Movie>> addUserRating(
+    Movie movie,
+    int userRating
+  );
 }

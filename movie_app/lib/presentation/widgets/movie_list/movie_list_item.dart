@@ -4,8 +4,8 @@ import 'package:movieapp/router.gr.dart';
 
 class MovieListItem extends StatefulWidget {
   final Movie movie;
-
-  const MovieListItem({Key key, this.movie}) : super(key: key);
+  final Function(List<Movie>) callback;
+  const MovieListItem({Key key, this.movie, this.callback}) : super(key: key);
 
   @override
   _MovieListItemState createState() => _MovieListItemState();
@@ -53,11 +53,15 @@ class _MovieListItemState extends State<MovieListItem> {
   }
 
   void showMovieDetails(int id) {
-    Navigator.of(context).pushNamed(
+    Navigator.of(context)
+        .pushNamed(
       Router.movieDetailsPage,
       arguments: MovieDetailsPageArguments(
         movie: widget.movie,
       ),
-    );
+    )
+        .then((value) {
+      widget.callback(value);
+    });
   }
 }

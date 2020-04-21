@@ -4,7 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:movieapp/domain/entities/movie.dart';
 import 'package:movieapp/domain/usecases/get_all_movies.dart';
 import 'package:movieapp/domain/usecases/search_movies.dart';
-import 'package:movieapp/presentation/bloc/movie_bloc.dart';
+import 'package:movieapp/presentation/bloc/movie_list_bloc/movie_bloc.dart';
 
 class MockGetAllMovies extends Mock implements GetAllMovies {}
 
@@ -64,24 +64,24 @@ void main() {
     // );
   });
 
-  group('SearchRequested', () {
-    final tSearchTerm = 'Avengers';
-    final tResult = List<Movie>();
-    test(
-      'should emit [Loaded] when data is gotten successfully',
-      () async {
-        // arrange
-        when(mockSearchMovies(any)).thenAnswer((_) async => Right(tResult));
-        // assert later
-        final expected = [
-          MovieInitial(),
-          Loaded(movies: tResult),
-        ];
-        expectLater(bloc, emitsInOrder(expected));
-        // act
-        bloc.add(SearchRequested(searchTerm: tSearchTerm));
-      },
-    );
+  // group('SearchRequested', () {
+  //   final tSearchTerm = 'Avengers';
+  //   final tResult = List<Movie>();
+  //   test(
+  //     'should emit [Loaded] when data is gotten successfully',
+  //     () async {
+  //       // arrange
+  //       when(mockSearchMovies(any)).thenAnswer((_) async => Right(tResult));
+  //       // assert later
+  //       final expected = [
+  //         MovieInitial(),
+  //         Loaded(movies: tResult),
+  //       ];
+  //       expectLater(bloc, emitsInOrder(expected));
+  //       // act
+  //       bloc.add(SearchRequested(searchTerm: tSearchTerm));
+  //     },
+  //   );
 
     // test(
     //   'should emit [Error] when getting data fails',
@@ -99,5 +99,5 @@ void main() {
     //     bloc.add(SearchRequested(searchTerm: tSearchTerm));
     //   },
     // );
-  });
+  // });
 }

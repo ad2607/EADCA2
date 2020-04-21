@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
+import 'package:movieapp/domain/entities/user_rating.dart';
 
 class Movie extends Equatable {
   final int id;
@@ -10,6 +11,7 @@ class Movie extends Equatable {
   final String director;
   final double imdbRating;
   final int rottenTomatoesScore;
+  final List<UserRating> userRatings;
 
   Movie({
     @required this.id,
@@ -20,6 +22,7 @@ class Movie extends Equatable {
     @required this.director,
     @required this.imdbRating,
     @required this.rottenTomatoesScore,
+    @required this.userRatings,
   });
 
   @override
@@ -32,5 +35,6 @@ class Movie extends Equatable {
         director,
         imdbRating,
         rottenTomatoesScore,
+        userRatings,
       ];
 }

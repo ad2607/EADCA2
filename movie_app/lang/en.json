@@ -8,5 +8,7 @@
     "release_date": "Release Date",
     "imdb": "IMDB",
     "rotten_tomatoes": "Rotten Tomatoes",
-    "synopsis": "Synopsis"
+    "synopsis": "Synopsis",
+    "users": "Users",
+    "none": "None"
 }

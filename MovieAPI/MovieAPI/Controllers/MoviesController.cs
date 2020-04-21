@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using MovieAPI.Models;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace MovieAPI.Controllers
 {
@@ -18,7 +19,6 @@ namespace MovieAPI.Controllers
     {
         private readonly MovieContext _context;
         private readonly IWebHostEnvironment _env;
-    
 
         public MoviesController(MovieContext context, IWebHostEnvironment env)
         {
@@ -26,57 +26,7 @@ namespace MovieAPI.Controllers
             _context = context;
 
             if (!_context.Movies.Any())
-            {   
-                var rating1 = new UserRating { Rating = 8, Id = 1 };
-                var rating2 = new UserRating { Rating = 8, Id = 2 };
-                var rating3 = new UserRating { Rating = 8, Id = 3 };
-                var rating4 = new UserRating { Rating = 8, Id = 4 };
-                var rating5 = new UserRating { Rating = 8, Id = 5 };
-                var rating6 = new UserRating { Rating = 8, Id = 6 };
-                var rating7 = new UserRating { Rating = 8, Id = 7 };
-                var rating8 = new UserRating { Rating = 8, Id = 8 };
-                var rating9 = new UserRating { Rating = 8,Id = 9 };
-                var rating10 = new UserRating { Rating = 8, Id = 10 };
-                var rating11 = new UserRating { Rating = 8, Id = 11 }; 
-                var rating12 = new UserRating { Rating = 8, Id = 12 };
-
-                _context.UserRatings.Add(
-                    rating1
-                    );
-                _context.UserRatings.Add(
-                    rating2
-                    );
-                _context.UserRatings.Add(
-                    rating3
-                    );
-                _context.UserRatings.Add(
-                    rating4
-                    );
-                _context.UserRatings.Add(
-                    rating5
-                    );
-                _context.UserRatings.Add(
-                    rating6
-                    );
-                _context.UserRatings.Add(
-                     rating7
-                     ); 
-                _context.UserRatings.Add(
-                     rating8
-                     );
-                _context.UserRatings.Add(
-                    rating9
-                    );
-                _context.UserRatings.Add(
-                    rating10
-                    );
-                _context.UserRatings.Add(
-                    rating11
-                    );
-                _context.UserRatings.Add(
-                    rating12
-                    );
-
+            {
                 var movie1 = new Movie
                 {
                     Id = 1,
@@ -89,7 +39,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 87,
                     UserRatings = new List<UserRating>()
                     {
-                        rating1,
+
                     }
                 };
 
@@ -105,7 +55,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 85,
                     UserRatings = new List<UserRating>()
                     {
-                        rating2,
+
                     }
                 };
 
@@ -121,7 +71,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 94,
                     UserRatings = new List<UserRating>()
                     {
-                        rating3,
+
                     }
                 };
 
@@ -137,7 +87,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 89,
                     UserRatings = new List<UserRating>()
                     {
-                        rating4,
+
                     }
 
                 };
@@ -154,7 +104,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 93,
                     UserRatings = new List<UserRating>()
                     {
-                        rating5,
+
                     }
                 };
 
@@ -170,7 +120,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 94,
                     UserRatings = new List<UserRating>()
                     {
-                        rating6,
+
                     }
                 };
 
@@ -186,7 +136,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 91,
                     UserRatings = new List<UserRating>()
                     {
-                        rating7,
+
                     }
                 };
 
@@ -202,7 +152,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 52,
                     UserRatings = new List<UserRating>()
                     {
-                        rating8,
+
                     }
                 };
 
@@ -218,7 +168,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 68,
                     UserRatings = new List<UserRating>()
                     {
-                        rating9,
+
                     }
                 };
 
@@ -234,7 +184,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 90,
                     UserRatings = new List<UserRating>()
                     {
-                        rating10,
+
                     }
                 };
 
@@ -250,7 +200,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 64,
                     UserRatings = new List<UserRating>()
                     {
-                        rating11,
+
                     }
                 };
 
@@ -266,7 +216,7 @@ namespace MovieAPI.Controllers
                     RottenTomatoesScore = 87,
                     UserRatings = new List<UserRating>()
                     {
-                        rating12,
+
                     }
                 };
 
@@ -320,12 +270,6 @@ namespace MovieAPI.Controllers
             }
         }
 
-
-        //for testing 
-        public MoviesController(List<Movie> testMovies)
-        {
-            testMovies = new List<Movie>(testMovies);
-        }
 
         /// <summary>
         /// Gets all Movies from the database
@@ -404,42 +348,25 @@ namespace MovieAPI.Controllers
         /// /// <remarks>
         /// Sample respnse:
         ///
-        ///     Get /PutUpdateMovieUserReviews
+        ///     Put /PutUpdateMovieUserReviews
         ///     {
-        ///        title: 
+        ///        
         ///     }
         ///
         /// </remarks>
-        /// <param name="Id"></param>
-        /// <param name="movie"></param>
+        /// <param name="id"></param>
+        /// <param name="patchDoc"></param>
         /// <returns>Updated Movie Details</returns>
-        /// <response code="201">Returns updated Movie details</response>
-        /// <response code="400">If no movie poster was retrieved</response>
-        [HttpPut("{Id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]  
-        [ProducesResponseType(StatusCodes.Status404NotFound)]      
-        public IActionResult PutUpdateMovieUserReviews(int Id, [FromBody] Movie movie)
+        /// <response code="204">Returns updated Movie details</response>
+        /// <response code="404">If no movie was found</response>
+        [HttpPatch("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult PatchUpdateMovieUserReviews(int id, [FromBody] JsonPatchDocument<Movie> patchDoc)
         {
-            // automatic model state validation (400)
-
-            if (Id == movie.Id)
-            {
-                var record = _context.Movies.SingleOrDefault(l => l.Id == Id);
-                if (record == null)
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    record.UserRatings = movie.UserRatings;              
-                    _context.SaveChanges();
-                    return NoContent();                                                                 
-                }
-            }
-            else
-            {
-                return BadRequest("invalid Id");
-            }
+            patchDoc.ApplyTo(_context.Movies.Where(e => e.Id == id).SingleOrDefault());
+            _context.SaveChanges();
+            return NoContent();
         }
     }
 }

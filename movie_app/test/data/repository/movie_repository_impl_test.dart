@@ -82,7 +82,6 @@ void main() {
     });
   });
 
-
   group('searchMovies', () {
     final tSearchTerm = 'Avengers';
     final tResult = List<MovieModel>();
@@ -124,6 +123,63 @@ void main() {
           final result = await repository.searchMovies(tSearchTerm);
           // assert
           verify(mockRemoteDataSource.searchMovies(tSearchTerm));
+          expect(result, equals(Left(ServerFailure())));
+        },
+      );
+    });
+  });
+
+  group('addUserRating', () {
+    final tRating = 8;
+    final tResult = MovieModel(
+      id: 1,
+      title: 'The Dark Knight',
+      description: 'Test Description',
+      length: '2h 30mins',
+      director: 'Christopher Nolan',
+      imdbRating: 9.5,
+      rottenTomatoesScore: 92,
+      releaseDate: '2008-12-09',
+      userRatings: null,
+    );
+
+    test(
+      'Should check if the device is online',
+      () async {
+        // arrange
+        when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+        // act
+        repository.addUserRating(tResult, tRating);
+        // assert
+        verify(mockNetworkInfo.isConnected);
+      },
+    );
+
+    runTestsOnline(() {
+      test(
+        'Should return remote data when the call to remote data source is successful',
+        () async {
+          // arrange
+          when(mockRemoteDataSource.addUserRating(any, any))
+              .thenAnswer((_) async => tResult);
+          // act
+          final result = await repository.addUserRating(tResult, tRating);
+          // assert
+          verify(mockRemoteDataSource.addUserRating(tResult, tRating));
+          expect(result, equals(Right(tResult)));
+        },
+      );
+
+      test(
+        'Should return server failure when the call to remote data source is unsuccessful',
+        () async {
+          // arrange
+          when(mockRemoteDataSource.addUserRating(tResult, tRating))
+              .thenThrow(ServerException());
+          // act
+          final result = await repository.addUserRating(tResult, tRating);
+          // assert
+          verify(mockRemoteDataSource.addUserRating(tResult, tRating));
           expect(result, equals(Left(ServerFailure())));
         },
       );

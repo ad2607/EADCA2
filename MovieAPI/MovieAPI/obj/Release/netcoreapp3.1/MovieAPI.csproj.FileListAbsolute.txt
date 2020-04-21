@@ -163,8 +163,6 @@ C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcor
 C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\System.Web.Http.dll
 C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
-C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
@@ -321,6 +319,8 @@ C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\M
 C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\System.Web.Http.dll
 C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
@@ -457,8 +457,10 @@ C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Release\netcoreapp3.1\M
 C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Castle.Core.dll
-C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
-C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Release\netcoreapp3.1\MovieAPI.csproj.CoreCompileInputs.cache
-C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Release\netcoreapp3.1\MovieAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Adam\Source\Repos\EADCA22\MovieAPI\MovieAPI\obj\Release\netcoreapp3.1\MovieAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Castle.Core.dll
+C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Glen\Documents\College\EAD2\EADCA2\MovieAPI\MovieAPI\bin\Release\netcoreapp3.1\Microsoft.Bcl.HashCode.dll

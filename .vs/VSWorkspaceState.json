@@ -3,7 +3,8 @@
     "",
     "\\MovieAPI",
     "\\MovieAPI\\MovieAPI",
-    "\\MovieAPI\\MovieAPI\\Controllers"
+    "\\MovieAPI\\MovieAPI\\Controllers",
+    "\\MovieAPI\\MovieAPI\\Models"
   ],
   "SelectedNode": "\\MovieAPI\\MovieAPI.sln",
   "PreviewInSolutionExplorer": false

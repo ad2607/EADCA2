@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movieapp/presentation/bloc/movie_bloc.dart';
+import 'package:movieapp/presentation/bloc/movie_list_bloc/movie_bloc.dart';
 
 class MovieListInitialLoad extends StatefulWidget {
   @override

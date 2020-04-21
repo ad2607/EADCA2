@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movieapp/injection_container.dart';
-import 'package:movieapp/presentation/bloc/movie_bloc.dart';
+import 'package:movieapp/presentation/bloc/movie_list_bloc/movie_bloc.dart';
 import 'package:movieapp/presentation/widgets/error_state_widget.dart';
 import 'package:movieapp/presentation/widgets/failure.dart';
 import 'package:movieapp/presentation/widgets/loading.dart';

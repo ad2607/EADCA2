@@ -26,6 +26,11 @@ void main() {
         .thenAnswer((_) async => http.Response(fixture('movie.json'), 200));
   }
 
+  void setUpMockHttpClientSuccess204() {
+    when(mockHttpClient.get(any, headers: anyNamed('headers')))
+        .thenAnswer((_) async => http.Response(fixture('movie.json'), 204));
+  }
+
   void setUpMockHttpClientFailure404() {
     when(mockHttpClient.get(any, headers: anyNamed('headers')))
         .thenAnswer((_) async => http.Response('Something went wrong', 404));
@@ -56,7 +61,7 @@ void main() {
     );
 
     test(
-      'should return NumberTrivia when the response code is 200 (success)',
+      'should return Movie list when the response code is 200 (success)',
       () async {
         // arrange
         setUpMockHttpClientSuccess200();
@@ -105,7 +110,7 @@ void main() {
     );
 
     test(
-      'should return NumberTrivia when the response code is 200 (success)',
+      'should return Movie list when the response code is 200 (success)',
       () async {
         // arrange
         setUpMockHttpClientSuccess200();
@@ -125,6 +130,68 @@ void main() {
         final call = dataSource.searchMovies;
         // assert
         expect(() => call(tSearchTerm), throwsA(TypeMatcher<ServerException>()));
+      },
+    );
+  });
+
+  group('addUserRating', () {
+    final tMovieId = 1;
+    final tMovie = new MovieModel(
+    id: 1,
+    title: 'The Dark Knight',
+    description: 'Test Description',
+    length: '2h 30mins',
+    director: 'Christopher Nolan',
+    imdbRating: 9.5,
+    rottenTomatoesScore: 92,
+    releaseDate: '2008-12-09',
+    userRatings: null,
+  );
+
+  final tUserRating = 8;
+
+      String json = jsonEncode(fixture('movie.json'));
+
+    test(
+      '''should perform a Patch request on a URL with the movies
+       list of user ratings being the endpoint and with application/json header''',
+      () async {
+        // arrange
+        setUpMockHttpClientSuccess204();
+        // act
+        dataSource.addUserRating(tMovie, tUserRating);
+        // assert
+        verifyNever(mockHttpClient.patch(
+          "https://movieapi20200406063228.azurewebsites.net/api/Movies/$tMovieId",
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: json,
+        ));
+      },
+    );
+
+    // test(
+    //   'should return Movie when the response code is 204 (success)',
+    //   () async {
+    //     // arrange
+    //     setUpMockHttpClientSuccess204();
+    //     // act
+    //     final result = await dataSource.addUserRating(tMovie, tUserRating);
+    //     // assert
+    //     expect(result, equals(tMovie));
+    //   },
+    // );
+
+    test(
+      'should throw a ServerException when the response code is 404 or other',
+      () async {
+        // arrange
+        setUpMockHttpClientFailure404();
+        // act
+        final call = dataSource.addUserRating;
+        // assert
+        expect(() => call(tMovie, tUserRating), throwsA(TypeMatcher<ServerException>()));
       },
     );
   });
