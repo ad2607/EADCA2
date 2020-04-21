@@ -1,10 +1,18 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MovieAPI",
-    "\\MovieAPI\\MovieAPI",
-    "\\MovieAPI\\MovieAPI\\Controllers",
-    "\\MovieAPI\\MovieAPI\\Models"
+    "\\movie_app",
+    "\\movie_app\\android",
+    "\\movie_app\\android\\app",
+    "\\movie_app\\android\\app\\src",
+    "\\movie_app\\android\\app\\src\\main",
+    "\\movie_app\\android\\app\\src\\main\\java",
+    "\\movie_app\\android\\app\\src\\main\\java\\io",
+    "\\movie_app\\android\\app\\src\\main\\java\\io\\flutter",
+    "\\movie_app\\android\\app\\src\\main\\java\\io\\flutter\\plugins",
+    "\\movie_app\\lib",
+    "\\movie_app\\lib\\data",
+    "\\movie_app\\lib\\data\\models"
   ],
   "SelectedNode": "\\MovieAPI\\MovieAPI.sln",
   "PreviewInSolutionExplorer": false
