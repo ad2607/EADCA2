@@ -1,7 +1,5 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:movieapp/domain/entities/movie.dart';
 import 'package:movieapp/domain/usecases/add_user_rating.dart';
 import 'package:movieapp/domain/usecases/get_all_movies.dart';
 import 'package:movieapp/presentation/bloc/movie_details_bloc/movie_details_bloc.dart';
@@ -64,16 +62,17 @@ void main() {
   //   'should emit [Error] when getting data fails',
   //   () async {
   //     // arrange
-  //     when(mockGetAllMovies(any))
+  //     when(mockAddUserRating(any))
   //         .thenAnswer((_) async => Left(ServerFailure()));
   //     // assert later
   //     final expected = [
-  //       MovieInitial(),
+  //       MovieDetailsInitial(),
+  //       Loading(),
   //       Error(message: 'Server Failure!'),
   //     ];
   //     expectLater(bloc, emitsInOrder(expected));
   //     // act
-  //     bloc.add(InitialLoadRequested());
+  //     bloc.add(AddUserRatingRequested(movie: tResult, userRating: 8));
   //   },
   // );
   // });

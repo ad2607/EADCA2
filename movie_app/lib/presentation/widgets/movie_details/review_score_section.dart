@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:movieapp/app_localizations.dart';
+import 'package:movieapp/domain/entities/movie.dart';
 import 'package:movieapp/domain/entities/user_rating.dart';
+import 'package:movieapp/presentation/bloc/movie_details_bloc/movie_details_bloc.dart';
 
 class ReviewScoreSection extends StatefulWidget {
+  final Movie movie;
   final double imdbRating;
   final int rottenTomatoesScore;
   final List<UserRating> userRatings;
 
   const ReviewScoreSection({
     Key key,
+    @required this.movie,
     @required this.imdbRating,
     @required this.rottenTomatoesScore,
     @required this.userRatings,
@@ -19,6 +25,7 @@ class ReviewScoreSection extends StatefulWidget {
 }
 
 class _ReviewScoreSectionState extends State<ReviewScoreSection> {
+  int rating = 5;
   int totalUserRating;
   double averageUserRating;
   @override
@@ -30,100 +37,118 @@ class _ReviewScoreSectionState extends State<ReviewScoreSection> {
     averageUserRating = (totalUserRating / widget.userRatings.length);
     return Container(
       padding: EdgeInsets.only(bottom: 30),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      child: Column(
         children: <Widget>[
-          Container(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  width: 120,
-                  child: Text(
-                    widget.imdbRating.toString(),
-                    style: TextStyle(
-                        color: buildIMDBRatingColour(),
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Container(
-                  width: 120,
-                  margin: EdgeInsets.only(top: 30),
-                  child: Text(
-                    AppLocalizations.of(context).translate('imdb'),
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: 120,
+                      child: Text(
+                        widget.imdbRating.toString(),
+                        style: TextStyle(
+                            color: buildIMDBRatingColour(),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
-                    textAlign: TextAlign.center,
-                  ),
+                    Container(
+                      width: 120,
+                      margin: EdgeInsets.only(top: 30),
+                      child: Text(
+                        AppLocalizations.of(context).translate('imdb'),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 26),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: 120,
+                      child: Text(
+                        widget.rottenTomatoesScore.toString() + '%',
+                        style: TextStyle(
+                          color: buildRottenTomatoesScoreColour(),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Container(
+                      width: 120,
+                      margin: EdgeInsets.only(top: 30),
+                      child: Text(
+                        AppLocalizations.of(context)
+                            .translate('rotten_tomatoes'),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: 120,
+                      child: Text(
+                        buildUserRatingText(),
+                        style: TextStyle(
+                          color: buildUserRatingColour(),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Container(
+                      width: 120,
+                      margin: EdgeInsets.only(top: 30),
+                      child: Text(
+                        AppLocalizations.of(context).translate('users'),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
           Container(
-            margin: EdgeInsets.only(top: 26),
-            child: Column(
-              children: <Widget>[
-                Container(
-                  width: 120,
-                  child: Text(
-                    widget.rottenTomatoesScore.toString() + '%',
-                    style: TextStyle(
-                      color: buildRottenTomatoesScoreColour(),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Container(
-                  width: 120,
-                  margin: EdgeInsets.only(top: 30),
-                  child: Text(
-                    AppLocalizations.of(context).translate('rotten_tomatoes'),
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  width: 120,
-                  child: Text(
-                    buildUserRatingText(),
-                    style: TextStyle(
-                      color: buildUserRatingColour(),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Container(
-                  width: 120,
-                  margin: EdgeInsets.only(top: 30),
-                  child: Text(
-                    AppLocalizations.of(context).translate('users'),
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
+            padding: EdgeInsets.only(top: 20),
+            width: 300,
+            child: RaisedButton(
+              key: Key('addRatingButton'),
+              child: Text(
+                'Rate this Movie',
+                style: TextStyle(color: Colors.white),
+              ),
+              color: Color.fromRGBO(51, 51, 61, 1),
+              onPressed: _showDialog,
             ),
           ),
         ],
@@ -175,5 +200,53 @@ class _ReviewScoreSectionState extends State<ReviewScoreSection> {
     } else {
       return averageUserRating.toStringAsFixed(1);
     }
+  }
+
+  void _showDialog() {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: Text("Rate this Movie"),
+          content: RatingBar(
+            initialRating: 5,
+            minRating: 1,
+            direction: Axis.horizontal,
+            allowHalfRating: false,
+            itemCount: 10,
+            itemBuilder: (context, _) => Icon(
+              Icons.star,
+              color: Colors.amber,
+            ),
+            onRatingUpdate: (newRating) {
+              rating = newRating.toInt();
+              print(newRating);
+            },
+          ),
+          actions: <Widget>[
+            // usually buttons at the bottom of the dialog
+            new FlatButton(
+              key: Key('addRatingConfirmButton'),
+              child: new Text("Confirm"),
+              onPressed: () {
+                _addUserRating();
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _addUserRating() {
+    BlocProvider.of<MovieDetailsBloc>(context).add(
+      AddUserRatingRequested(
+        movie: widget.movie,
+        userRating: rating,
+      ),
+    );
   }
 }

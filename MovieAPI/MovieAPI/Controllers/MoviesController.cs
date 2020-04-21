@@ -348,7 +348,7 @@ namespace MovieAPI.Controllers
         /// /// <remarks>
         /// Sample respnse:
         ///
-        ///     Put /PutUpdateMovieUserReviews
+        ///     Patch /PatchUpdateMovieUserReviews
         ///     {
         ///        
         ///     }

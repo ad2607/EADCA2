@@ -30,9 +30,11 @@ namespace MovieAPI.Models
         [Required]
         public string Director { get; set; }
 
+        [Range(1, 10)]
         [Required]
         public double IMDBRating { get; set; }
 
+        [Range(0, 100)]
         [Required]
         public int RottenTomatoesScore { get; set; }
 

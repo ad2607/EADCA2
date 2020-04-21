@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:movieapp/domain/entities/movie.dart';
-import 'package:movieapp/presentation/bloc/movie_details_bloc/movie_details_bloc.dart';
 import 'package:movieapp/presentation/widgets/movie_details/directors_section.dart';
 import 'package:movieapp/presentation/widgets/movie_details/movie_length_section.dart';
 import 'package:movieapp/presentation/widgets/movie_details/poster_section.dart';
@@ -21,12 +18,10 @@ class MovieDetailsWidget extends StatefulWidget {
 }
 
 class _MovieDetailsWidgetState extends State<MovieDetailsWidget> {
-  int rating = 5;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(onPressed: _showDialog),
         backgroundColor: Theme.of(context).primaryColor,
         body: SingleChildScrollView(
           child: Column(
@@ -37,6 +32,7 @@ class _MovieDetailsWidgetState extends State<MovieDetailsWidget> {
               ),
               SectionDivider(),
               ReviewScoreSection(
+                movie: widget.movie,
                 imdbRating: widget.movie.imdbRating,
                 rottenTomatoesScore: widget.movie.rottenTomatoesScore,
                 userRatings: widget.movie.userRatings,
@@ -64,50 +60,4 @@ class _MovieDetailsWidgetState extends State<MovieDetailsWidget> {
     );
   }
 
-  void _showDialog() {
-    // flutter defined function
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        // return object of type Dialog
-        return AlertDialog(
-          title: Text("Rate this Movie"),
-          content: RatingBar(
-            initialRating: 5,
-            minRating: 1,
-            direction: Axis.horizontal,
-            allowHalfRating: false,
-            itemCount: 10,
-            itemBuilder: (context, _) => Icon(
-              Icons.star,
-              color: Colors.amber,
-            ),
-            onRatingUpdate: (newRating) {
-              rating = newRating.toInt();
-              print(newRating);
-            },
-          ),
-          actions: <Widget>[
-            // usually buttons at the bottom of the dialog
-            new FlatButton(
-              child: new Text("Confirm"),
-              onPressed: () {
-                _addUserRating();
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  void _addUserRating() {
-    BlocProvider.of<MovieDetailsBloc>(context).add(
-      AddUserRatingRequested(
-        movie: widget.movie,
-        userRating: rating,
-      ),
-    );
-  }
 }

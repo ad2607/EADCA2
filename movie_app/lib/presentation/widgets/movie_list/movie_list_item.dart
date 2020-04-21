@@ -20,6 +20,7 @@ class _MovieListItemState extends State<MovieListItem> {
         children: <Widget>[
           Container(
             child: InkWell(
+              key: Key('moviePosterListItem'),
               onTap: () => showMovieDetails(widget.movie.id),
               customBorder: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
