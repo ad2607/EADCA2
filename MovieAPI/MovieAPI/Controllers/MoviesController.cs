@@ -18,6 +18,7 @@ namespace MovieAPI.Controllers
     {
         private readonly MovieContext _context;
         private readonly IWebHostEnvironment _env;
+    
 
         public MoviesController(MovieContext context, IWebHostEnvironment env)
         {
@@ -319,6 +320,12 @@ namespace MovieAPI.Controllers
             }
         }
 
+
+        //for testing 
+        public MoviesController(List<Movie> testMovies)
+        {
+            testMovies = new List<Movie>(testMovies);
+        }
 
         /// <summary>
         /// Gets all Movies from the database
