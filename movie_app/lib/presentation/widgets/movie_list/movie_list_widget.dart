@@ -18,54 +18,60 @@ class _MovieListWidgetState extends State<MovieListWidget> {
   List<Movie> currentMovies;
   @override
   Widget build(BuildContext context) {
-    if (currentMovies == null) {
+    if (currentMovies == null || currentMovies != widget.movies) {
       currentMovies = widget.movies;
     }
 
-    if (widget.movies.isEmpty) {
+    if (currentMovies.isEmpty) {
       return Expanded(
         child: Scaffold(
           backgroundColor: Theme.of(context).primaryColor,
-          appBar: AppBar(
-            actions: <Widget>[
-              Container(
-                width: 200,
-                height: 60,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.white,
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(80),
+            child: AppBar(
+              elevation: 20,
+              actions: <Widget>[
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                          ),
+                        ),
+                        labelText:
+                            AppLocalizations.of(context).translate('search'),
+                        labelStyle: TextStyle(color: Colors.white),
                       ),
+                      style: TextStyle(color: Colors.white),
+                      keyboardType: TextInputType.text,
+                      onChanged: (searchTerm) => {
+                        if (searchTerm == '')
+                          {
+                            _retrieveAllMovies(),
+                          }
+                        else
+                          {
+                            _searchForMovies(searchTerm),
+                          }
+                      },
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                      ),
-                    ),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                      ),
-                    ),
-                    labelText: AppLocalizations.of(context).translate('search'),
-                    labelStyle: TextStyle(color: Colors.white),
                   ),
-                  style: TextStyle(color: Colors.white),
-                  keyboardType: TextInputType.text,
-                  onChanged: (searchTerm) => {
-                    if (searchTerm == '')
-                      {
-                        _retrieveAllMovies(),
-                      }
-                    else
-                      {
-                        _searchForMovies(searchTerm),
-                      }
-                  },
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           body: Column(
             children: <Widget>[

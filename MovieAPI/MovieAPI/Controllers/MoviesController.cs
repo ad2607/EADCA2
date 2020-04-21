@@ -320,7 +320,7 @@ namespace MovieAPI.Controllers
         /// <summary>
         /// Gets Movie poster with Id
         /// </summary>
-        /// /// <remarks>
+        /// <remarks>
         /// Sample respnse:
         ///
         ///     Get /GetMoviePoster
@@ -345,7 +345,7 @@ namespace MovieAPI.Controllers
         /// <summary>
         /// Update Movie User Ratings
         /// </summary>
-        /// /// <remarks>
+        /// <remarks>
         /// Sample respnse:
         ///
         ///     Patch /PatchUpdateMovieUserReviews
