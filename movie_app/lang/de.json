@@ -10,5 +10,7 @@
     "rotten_tomatoes": "Verrottete Tomaten",
     "synopsis": "Zusammenfassung",
     "users": "Benutzer",
-    "none": "Keiner"
+    "none": "Keiner",
+    "rate_this_movie": "Bewerten Sie diesen Film",
+    "confirm": "Bestätigen"
 }

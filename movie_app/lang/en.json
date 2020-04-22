@@ -10,5 +10,7 @@
     "rotten_tomatoes": "Rotten Tomatoes",
     "synopsis": "Synopsis",
     "users": "Users",
-    "none": "None"
+    "none": "None",
+    "rate_this_movie": "Rate this movie",
+    "confirm": "Confirm"
 }

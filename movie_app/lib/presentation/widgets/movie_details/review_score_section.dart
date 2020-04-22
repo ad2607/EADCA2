@@ -144,7 +144,8 @@ class _ReviewScoreSectionState extends State<ReviewScoreSection> {
             child: RaisedButton(
               key: Key('addRatingButton'),
               child: Text(
-                'Rate this Movie',
+                AppLocalizations.of(context)
+                    .translate('rate_this_movie'),
                 style: TextStyle(color: Colors.white),
               ),
               color: Color.fromRGBO(51, 51, 61, 1),
@@ -209,7 +210,8 @@ class _ReviewScoreSectionState extends State<ReviewScoreSection> {
       builder: (BuildContext context) {
         // return object of type Dialog
         return AlertDialog(
-          title: Text("Rate this Movie"),
+          title: Text(AppLocalizations.of(context)
+              .translate('rate_this_movie')),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -235,7 +237,8 @@ class _ReviewScoreSectionState extends State<ReviewScoreSection> {
             // usually buttons at the bottom of the dialog
             new FlatButton(
               key: Key('addRatingConfirmButton'),
-              child: new Text("Confirm"),
+              child: new Text(AppLocalizations.of(context)
+                  .translate('confirm')),
               onPressed: () {
                 _addUserRating();
                 Navigator.of(context).pop();

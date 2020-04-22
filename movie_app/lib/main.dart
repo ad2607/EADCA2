@@ -39,8 +39,8 @@ class MyApp extends StatelessWidget {
         navigatorKey: Router.navigator.key,
         theme: state.themeData,
         supportedLocales: [
-          Locale('en'),
-          Locale('de'),
+          Locale('en', 'UK'),
+          Locale('de', 'DE'),
         ],
         localizationsDelegates: [
         AppLocalizations.delegate,
